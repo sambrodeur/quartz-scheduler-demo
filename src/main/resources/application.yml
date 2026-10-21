@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: quartz-scheduler-demo
+  quartz:
+    auto-startup: true
+    job-store-type: memory
+    properties:
+      org:
+        quartz:
+          scheduler:
+            instanceId: AUTO
+          threadPool:
+            class: org.quartz.simpl.SimpleThreadPool
+            threadCount: 1
+
+qsd:
+  jobs:
+    firstJob:
+      class-name: io.github.sambrodeur.quartz.scheduler.demo.job.FirstJob
+      cron: '*/10 * * * * ?'

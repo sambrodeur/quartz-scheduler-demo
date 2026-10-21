@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:quartzdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  sql:
+    init:
+      mode: always
+  quartz:
+    auto-startup: true
+    job-store-type: jdbc
+    jdbc:
+      initialize-schema: always
